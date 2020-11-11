@@ -35,4 +35,7 @@ public:
 	bool full() const {
 		return (r + 1) % size == f;
 	}
+	void make_empty() {
+		f = r = 0;
+	}
 };
