@@ -38,4 +38,21 @@ public:
 	void make_empty() {
 		f = r = 0;
 	}
+	void operator=(const queue<T>& rhs) {
+		delete[] data;
+		size = rhs.size;
+		r = rhs.r;
+		f = rhs.f;
+		data = new T[size];
+		for (int i = f + 1;i <= r;i++)
+			data[i] = rhs.data[i];
+	}
+	queue(const queue<T>& rhs) {
+		size = rhs.size;
+		r = rhs.r;
+		f = rhs.f;
+		data = new T[size];
+		for (int i = f + 1;i <= r;i++)
+			data[i] = rhs.data[i];
+	}
 };
